@@ -1,10 +1,12 @@
 import { theme } from '@/theme/theme'
 import { Link } from 'expo-router'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
+import { SafeAreaView, useSafeAreaInsets, } from 'react-native-safe-area-context'
 const index = () => {
+  const insets = useSafeAreaInsets();
   return (
-    <View style={styles.main}>
+    <SafeAreaView style={[styles.main,{marginTop:insets.top,paddingBottom:insets.bottom}]}>
       <Text style={styles.text}>First App</Text>
       <Link href ="/OnBoarding" style={{margin:theme.spacing[4],borderRadius:10,backgroundColor:theme.colors.primary,padding:theme.spacing[4],color:'white'}}>Go To Onboarding</Link>
       <Link href ="/(auth)/Sign-In" style={{margin:theme.spacing[4],borderRadius:10,backgroundColor:theme.colors.primary,padding:theme.spacing[4],color:'white'}}>Go To Sign In</Link>
@@ -15,7 +17,7 @@ const index = () => {
         pathname : "/subscriptions/[id]",
         params : { id : "claude"}
       }}>Claude Max Subscription</Link>
-    </View>
+    </SafeAreaView>
   )
 }
 
