@@ -1,3 +1,4 @@
+import { theme } from '@/theme/theme';
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -15,5 +16,6 @@ export default Settings
 const styles = StyleSheet.create({
   main:{
     flex:1,
+    backgroundColor:theme.colors.background
   }
 })
