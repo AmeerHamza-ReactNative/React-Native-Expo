@@ -29,7 +29,7 @@ const SubscriptionCard = ({name,price,currency,icon,billing,color,category,plan,
                 <View style={theme.components.sub.rowCopy as ViewStyle}>
                   <Text style={theme.components.sub.label}>Payment :</Text>
                   <Text style={theme.components.sub.value} ellipsizeMode='tail' numberOfLines={1}>
-                    {paymentMethod?.trim()}
+                    {paymentMethod?.trim() ?? 'Not Provided'}
                   </Text>
                 </View>
               </View>
@@ -37,7 +37,7 @@ const SubscriptionCard = ({name,price,currency,icon,billing,color,category,plan,
                 <View style={theme.components.sub.rowCopy as ViewStyle}>
                   <Text style={theme.components.sub.label}>Category :</Text>
                   <Text style={theme.components.sub.value} ellipsizeMode='tail' numberOfLines={1}>
-                    {category?.trim() ||  plan?.trim()}
+                    {(category?.trim() ||  plan?.trim() )  ?? 'Not Provided'}
                   </Text>
                 </View>
               </View>
@@ -45,7 +45,7 @@ const SubscriptionCard = ({name,price,currency,icon,billing,color,category,plan,
                 <View style={theme.components.sub.rowCopy as ViewStyle}>
                   <Text style={theme.components.sub.label}>Started :</Text>
                   <Text style={theme.components.sub.value} ellipsizeMode='tail' numberOfLines={1}>
-                    { startDate ? formatSubscriptionDateTime(startDate) : ''}
+                    { startDate ? formatSubscriptionDateTime(startDate) : 'Not Provided'}
                   </Text>
                 </View>
               </View>
@@ -53,7 +53,7 @@ const SubscriptionCard = ({name,price,currency,icon,billing,color,category,plan,
                 <View style={theme.components.sub.rowCopy as ViewStyle}>
                   <Text style={theme.components.sub.label}>Renewal Date :</Text>
                   <Text style={theme.components.sub.value} ellipsizeMode='tail' numberOfLines={1}>
-                    {renewalDate ? formatSubscriptionDateTime(renewalDate) : ''}
+                    {renewalDate ? formatSubscriptionDateTime(renewalDate) : 'Not Provided'}
                   </Text>
                 </View>
               </View>
@@ -61,7 +61,7 @@ const SubscriptionCard = ({name,price,currency,icon,billing,color,category,plan,
                 <View style={theme.components.sub.rowCopy as ViewStyle}>
                   <Text style={theme.components.sub.label}>Status :</Text>
                   <Text style={theme.components.sub.value} ellipsizeMode='tail' numberOfLines={1}>
-                    {status ? formatStatusLabel(status) : ''}
+                    {status ? formatStatusLabel(status) : 'Not Provided'}
                   </Text>
                 </View>
               </View>

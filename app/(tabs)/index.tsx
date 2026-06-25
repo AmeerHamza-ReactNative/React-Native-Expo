@@ -64,7 +64,7 @@ const index = () => {
           )}
           extraData={expandedSubscriptionId}
           ItemSeparatorComponent={()=> <View style={{marginBottom:12}}/>}
-          contentContainerStyle={{paddingBottom:80}}
+          contentContainerStyle={{paddingBottom:90}}
           showsVerticalScrollIndicator={false}
           ListEmptyComponent={<Text style={theme.components.home.emptyState}>No subscriptions yet.</Text>}
         />
